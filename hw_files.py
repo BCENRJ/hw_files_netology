@@ -1,3 +1,4 @@
+from pprint import pprint
 import os
 # For Task 1 and 2
 path = os.path.join(os.getcwd(), 'recipes.txt')
@@ -39,7 +40,7 @@ def get_shop_list_by_dishes(dishes, person_count, xbook=cook_book):
               'quantity': list_ing['quantity'] * person_count }
     return result         
 # Task 2
-print(get_shop_list_by_dishes(['Фахитос', 'Омлет'], 5))
+# print(get_shop_list_by_dishes(['Фахитос', 'Омлет'], 5))
 
 
 
@@ -52,8 +53,8 @@ def get_data(file_path):
     'Wrong Path File'
   with open(file_path, encoding='UTF-8') as file:
     temp_list, count = [], 1
-    for _ in file:
-      temp_list.append(f'Строка номер {count} файла номер {without_extension}')
+    for line in file:
+      temp_list.append(f'{line.strip()} (cтрока: №{count} файл: №{without_extension})')
       count +=1
     return {file_name: {count - 1: temp_list}}
 
@@ -92,3 +93,4 @@ second_data_file = get_data(file_path_second)
 sorted_one = sorting_data(third_data_file, second_data_file, first_data_file)
 # Loading to sorted_result file            
 load(file_path_sorted_result, sorted_one)
+
