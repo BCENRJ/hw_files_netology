@@ -1,4 +1,3 @@
-from pprint import pprint
 import os
 # For Task 1 and 2
 path = os.path.join(os.getcwd(), 'recipes.txt')
@@ -40,7 +39,7 @@ def get_shop_list_by_dishes(dishes, person_count, xbook=cook_book):
               'quantity': list_ing['quantity'] * person_count }
     return result         
 # Task 2
-# print(get_shop_list_by_dishes(['Фахитос', 'Омлет'], 5))
+print(get_shop_list_by_dishes(['Фахитос', 'Омлет'], 5))
 
 
 
